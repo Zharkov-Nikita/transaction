@@ -19,7 +19,7 @@
     "migration:generate": "npm run typeorm -- migration:generate -d src/config/orm.datasource.ts",
     "migration:run": "npm run typeorm migration:run -- -d src/config/orm.datasource.ts",
     "migration:revert": "npm run typeorm -- -d src/config/orm.datasource.ts migration:revert",
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
