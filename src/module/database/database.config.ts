@@ -1,10 +1,9 @@
 import { ConfigService } from '@nestjs/config';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { PostgresConnectionCredentialsOptions } from 'typeorm/driver/postgres/PostgresConnectionCredentialsOptions';
 import migrations from './migrations';
 
-export const databaseOptions = (config: ConfigService): TypeOrmModuleOptions & PostgresConnectionCredentialsOptions => ({
-    type: <any>config.get('DB_TYPE'),
+export const databaseOptions = (config: ConfigService): TypeOrmModuleOptions => ({
+    type: 'postgres',
     host: config.get('DB_HOST'),
     port: Number(config.get('DB_PORT')),
     username: config.get('DB_USERNAME'),
