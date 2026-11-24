@@ -8,6 +8,7 @@ import { CreateTransactionDto } from './dto/create-transaction.dto';
 import { TransactionEntity } from './entities/transaction.entity';
 import { mock } from 'jest-mock-extended';
 import { jest } from '@jest/globals';
+import { DataSource } from 'typeorm';
 
 describe('TransactionService', () => {
   let transactionService: TransactionService;
@@ -33,6 +34,10 @@ describe('TransactionService', () => {
           useValue: {
             produce: jest.fn(),
           },
+        },
+        {
+          provide: DataSource,
+          useValue: {},
         },
       ],
     }).compile();
