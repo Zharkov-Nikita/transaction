@@ -1,7 +1,3 @@
-const { createDefaultEsmPreset } = require('ts-jest');
-
-const defaultEsmPreset = createDefaultEsmPreset();
-
 /** @type {import('jest').Config} */
 module.exports = {
   testEnvironment: 'node',
