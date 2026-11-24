@@ -7,6 +7,7 @@ import { EventNameEnum, TransactionType } from './transaction.types';
 import { CreateTransactionDto } from './dto/create-transaction.dto';
 import { TransactionEntity } from './entities/transaction.entity';
 import { mock } from 'jest-mock-extended';
+import { jest } from '@jest/globals';
 
 describe('TransactionService', () => {
   let transactionService: TransactionService;
@@ -62,7 +63,7 @@ describe('TransactionService', () => {
       // Моки для методов, которые вызываются в transactionService.create
       jest.spyOn(transactionRepository,
         'createTransaction').mockResolvedValue(createdTransaction);
-      jest.spyOn(kafkaService, 'produce').mockImplementation();
+      jest.spyOn(kafkaService, 'produce').mockResolvedValue(undefined);
 
       await transactionService.create(createTransactionDto);
 
