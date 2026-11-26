@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "bundler",
     "resolvePackageJsonExports": true,
     "esModuleInterop": true,
