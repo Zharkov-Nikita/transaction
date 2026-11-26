@@ -1,7 +1,6 @@
 {
   "name": "transaction",
   "version": "0.0.1",
-  "type": "module",
   "description": "",
   "author": "",
   "private": true,

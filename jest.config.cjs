@@ -6,9 +6,7 @@ module.exports = {
   transform: {
     '^.+\\.ts$': ['ts-jest', {
       tsconfig: 'tsconfig.json',
-      useESM: true,
     }],
   },
-  extensionsToTreatAsEsm: ['.ts'],
   testEnvironment: 'node',
 };
