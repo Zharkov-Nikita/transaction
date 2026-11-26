@@ -6,16 +6,11 @@ jobs:
     steps:
       - name: get code
         uses: actions/checkout@v5
-
-      - name: setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '24.9'
-          cache: 'npm'
-
       - name: install deps
         run: npm ci
       - name: lint
         run: npm run lint
       - name: unit-test
         run: npm run test
+        env:
+          NODE_OPTIONS: --experimental-vm-modules
